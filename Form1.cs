@@ -12,7 +12,10 @@ namespace List
 {
     public partial class Form1 : Form
     {
-        List<string> lijst = new List<string>();
+            Stappel<int> lijstint = new Stappel<int>();
+            Stappel<string> lijstString = new Stappel<string>();
+            Stappel<Persoon> lijstPersoon = new Stappel<Persoon>();
+            
 
         
         public Form1()
@@ -20,15 +23,110 @@ namespace List
             InitializeComponent();
         }
 
-        private void btAdd_Click(object sender, EventArgs e)
+        private void btAddInt_Click(object sender, EventArgs e)
         {
-            
+            int cijfer = int.Parse(tbInt.Text);
 
-            lijst.Add(tbList.Text);
+            lijstint.addLijst(cijfer); 
+        }
 
-            string s = String.Join(",", lijst);
+        private void btRemoveInt_Click(object sender, EventArgs e)
+        {
+            lijstint.RemoveLijst();
+        }
 
-            MessageBox.Show(s.ToString());
+        private void btDeleteInt_Click(object sender, EventArgs e)
+        {
+            lijstint.Delete(int.Parse(tbInt.Text));
+        }
+
+        private void btToStringInt_Click(object sender, EventArgs e)
+        {
+            lijstint.ToString();
+
+            tbInt.Text = tbInt.ToString();
+        }
+
+        private void btIsAanwezigInt_Click(object sender, EventArgs e)
+        {
+            if(lijstint.isAanwezig(int.Parse(tbInt.Text)) == true)
+            {
+                MessageBox.Show("het cijfer " + tbInt.Text + "= true");
+            }
+            else
+            {
+                MessageBox.Show("het cijfer " + tbInt.Text + "= false");
+            }  
+        }
+
+        private void btAddString_Click(object sender, EventArgs e)
+        {
+            String woord = tbString.Text;
+
+            lijstString.addLijst(woord);
+        }
+
+        private void btRemoveString_Click(object sender, EventArgs e)
+        {
+            lijstString.RemoveLijst();
+        }
+
+        private void btDeleteAllString_Click(object sender, EventArgs e)
+        {
+            lijstString.Delete(tbString.Text);
+        }
+
+        private void btShowString_Click(object sender, EventArgs e)
+        {
+            lijstString.ToString();
+            tbString.Text = tbString.ToString();
+        }
+
+        private void btIsAanwezigString_Click(object sender, EventArgs e)
+        {
+            if (lijstString.isAanwezig(tbString.Text) == true)
+            {
+                MessageBox.Show("de woord " + tbString.Text + "= true");
+            }
+            else
+            {
+                MessageBox.Show("de woord " + tbString.Text + "= false");
+            }
+        }
+
+        private void btAddKleine_Click(object sender, EventArgs e)
+        {
+            Persoon persoon = new Persoon(tbKleine.Text);
+            lijstPersoon.addLijst(persoon);
+        }
+
+        private void btRemoveKleine_Click(object sender, EventArgs e)
+        {
+            lijstPersoon.RemoveLijst();
+        }
+
+        private void btDeleteallKleine_Click(object sender, EventArgs e)
+        {
+            /*lijstPersoon.Delete(lijstPersoon));*/
+        }
+
+        private void btShowKleine_Click(object sender, EventArgs e)
+        {
+            lijstPersoon.ToString();
+
+            tbKleine.Text = tbKleine.ToString();
+        }
+
+        private void btPresentKleine_Click(object sender, EventArgs e)
+        {
+            if (lijstint.isAanwezig(int.Parse(tbInt.Text)) == true)
+            {
+                MessageBox.Show("het Persoon " + tbKleine.Text + "= true");
+            }
+            else
+            {
+                MessageBox.Show("het Persoon " + tbKleine.Text + "= false");
+            }
         }
     }
 }
