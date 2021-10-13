@@ -18,5 +18,10 @@ namespace List
             Name = name;
             counter++;
         }
+
+        public override string? ToString()
+        {
+            return "het id: " + Id + " de naam is: " + Name;
+        }
     }
 }

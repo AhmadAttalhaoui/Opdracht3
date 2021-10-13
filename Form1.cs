@@ -28,6 +28,7 @@ namespace List
             int cijfer = int.Parse(tbInt.Text);
 
             lijstint.addLijst(cijfer); 
+           
         }
 
         private void btRemoveInt_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace List
         {
             lijstint.ToString();
 
-            tbInt.Text = tbInt.ToString();
+            tbAnswer.Text = tbInt.ToString();
         }
 
         private void btIsAanwezigInt_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace List
         private void btShowString_Click(object sender, EventArgs e)
         {
             lijstString.ToString();
-            tbString.Text = tbString.ToString();
+            tbAnswer.Text = tbString.ToString();
         }
 
         private void btIsAanwezigString_Click(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace List
         {
             lijstPersoon.ToString();
 
-            tbKleine.Text = tbKleine.ToString();
+            tbAnswer.Text = tbKleine.ToString();
         }
 
         private void btPresentKleine_Click(object sender, EventArgs e)
@@ -127,6 +128,22 @@ namespace List
             {
                 MessageBox.Show("het Persoon " + tbKleine.Text + "= false");
             }
+        }
+
+        private void btCopyInt_Click(object sender, EventArgs e)
+        {
+            /*lijstint.Copy();*/
+            // de copy function wilt niet werken
+        }
+
+        private void btCopyString_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCopyKleine_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

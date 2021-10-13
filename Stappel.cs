@@ -45,6 +45,16 @@ namespace List
                 return false;
             }
         }
-            
+
+        public List<T>? Copy(List<T> stapel)
+        {
+            List<T> Tweedelijst = new List<T>();
+            foreach (T add in stapel)
+            {
+                Tweedelijst.Add(add);
+            }
+            return Tweedelijst;
+        }
+
     }
 }
